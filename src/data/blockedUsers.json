@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "username": "blockedUser1",
+        "reason": "Violation of community guidelines"
+    },
+    {
+        "id": 2,
+        "username": "blockedUser2",
+        "reason": "Spamming"
+    }
+]

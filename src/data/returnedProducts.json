@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "productId": 101,
+        "userId": 1001,
+        "returnDate": "2023-10-01",
+        "reason": "Defective product"
+    },
+    {
+        "id": 2,
+        "productId": 102,
+        "userId": 1002,
+        "returnDate": "2023-10-05",
+        "reason": "Wrong size"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "code": "SUMMER21",
+        "discountPercentage": 15,
+        "description": "15% off on summer collection"
+    },
+    {
+        "id": 2,
+        "code": "WELCOME10",
+        "discountPercentage": 10,
+        "description": "10% off for new users"
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "newProductName": "Smartphone X",
+        "categoryId": 1
+    },
+    {
+        "id": 2,
+        "newProductName": "E-Book Reader",
+        "categoryId": 2
+    }
+]
