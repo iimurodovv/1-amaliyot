@@ -1,4 +1,5 @@
 import { getData, setData } from "../helpers/fileData.js";
+import { sendEmailMessage } from "../helpers/emailer.js";
 
 class UserController {
     async getAll(req, res) {
@@ -50,25 +51,29 @@ class UserController {
         try {
             const users = await getData("users.json");
 
-            const id = users.length > 0 ? users.at(-1).id + 1 : 1;
+            const { email, name } = req.body;
 
             const newUser = {
-                id: id,
                 ...req.body,
+                id: users.length ? users.at(-1).id + 1 : 1,
             };
 
+            await sendEmailMessage(email, name);
+
             users.push(newUser);
+
             await setData("users.json", users);
 
-            res.status(200).json({
+            return res.status(201).json({
                 success: true,
-                data: users,
+                message: "muvaffaqiyatli qo'shildi",
+                user: newUser,
             });
         } catch (err) {
-            return res.status(500).json({
-                success: false,
-                message: `Create da xatolik bor ${err.message}`,
-            });
+            console.log(`Createda xatolik: ${err.message}`);
+            return res
+                .status(500)
+                .json({ success: false, message: "Serverda xatolik" });
         }
     }
     async update(req, res) {
